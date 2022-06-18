@@ -9,6 +9,26 @@ import Firebase
 
 class FireComment {
     
+    static func readFirstComment(threadId: String, completion: ((Comment) -> Void)?) {
+        let db = Firestore.firestore()
+        db.collection("comments")
+            .whereField("threadId", isEqualTo: threadId)
+            .order(by: "createdAt", descending: false)
+            .limit(to: 1)
+            .addSnapshotListener {(snapshot, error) in
+                guard let snapshot = snapshot else {
+                    print("HELLO! Fail! Error fetching snapshots: \(error!)")
+                    return
+                }
+                print("HELLO! Success! Read comments. size: \(snapshot.documents.count)")
+                
+                if let document = snapshot.documents.first {
+                    let comment = Comment(document: document)
+                    completion?(comment)
+                }
+            }
+    }
+    
     static func createComment(threadId: String, displayName: String, text: String) {
         if let userId = FireAuth.userId() {
             let db = Firestore.firestore()
