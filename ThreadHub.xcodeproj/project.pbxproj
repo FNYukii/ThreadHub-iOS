@@ -15,6 +15,7 @@
 		54CF0F6F285D8CB5007F833A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54CF0F71285D8CB5007F833A /* Localizable.strings */; };
 		54CF0F75285D8DD7007F833A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 54CF0F74285D8DD7007F833A /* FirebaseAuth */; };
 		54CF0F77285D8DD7007F833A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 54CF0F76285D8DD7007F833A /* FirebaseFirestore */; };
+		54CF0F7B285D8EA5007F833A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54CF0F7A285D8EA5007F833A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		54CF0F69285D8B59007F833A /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		54CF0F70285D8CB5007F833A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		54CF0F72285D8CCD007F833A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		54CF0F7A285D8EA5007F833A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		54CF0F55285D8984007F833A /* ThreadHub */ = {
 			isa = PBXGroup;
 			children = (
+				54CF0F7A285D8EA5007F833A /* GoogleService-Info.plist */,
 				54CF0F56285D8984007F833A /* ThreadHubApp.swift */,
 				54CF0F64285D8ACC007F833A /* Screens */,
 				54CF0F67285D8AE1007F833A /* Components */,
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54CF0F5E285D8985007F833A /* Preview Assets.xcassets in Resources */,
+				54CF0F7B285D8EA5007F833A /* GoogleService-Info.plist in Resources */,
 				54CF0F6F285D8CB5007F833A /* Localizable.strings in Resources */,
 				54CF0F5B285D8985007F833A /* Assets.xcassets in Resources */,
 			);
