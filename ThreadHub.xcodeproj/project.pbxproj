@@ -52,7 +52,11 @@
 			isa = PBXGroup;
 			children = (
 				54CF0F56285D8984007F833A /* ThreadHubApp.swift */,
-				54CF0F58285D8984007F833A /* ContentView.swift */,
+				54CF0F64285D8ACC007F833A /* Screens */,
+				54CF0F67285D8AE1007F833A /* Components */,
+				54CF0F65285D8AD4007F833A /* Models */,
+				54CF0F66285D8ADB007F833A /* ViewModels */,
+				54CF0F68285D8AE8007F833A /* Utilities */,
 				54CF0F5A285D8985007F833A /* Assets.xcassets */,
 				54CF0F5C285D8985007F833A /* Preview Content */,
 			);
@@ -65,6 +69,42 @@
 				54CF0F5D285D8985007F833A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		54CF0F64285D8ACC007F833A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				54CF0F58285D8984007F833A /* ContentView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		54CF0F65285D8AD4007F833A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		54CF0F66285D8ADB007F833A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		54CF0F67285D8AE1007F833A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		54CF0F68285D8AE8007F833A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
