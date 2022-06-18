@@ -19,6 +19,7 @@
 		54CF0F7D285D8FB8007F833A /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F7C285D8FB8007F833A /* Thread.swift */; };
 		54CF0F7F285D9126007F833A /* ThreadsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F7E285D9126007F833A /* ThreadsViewModel.swift */; };
 		54CF0F81285D9392007F833A /* ThreadRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F80285D9392007F833A /* ThreadRow.swift */; };
+		54CF0F83285D9607007F833A /* CreateThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F82285D9607007F833A /* CreateThreadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		54CF0F7C285D8FB8007F833A /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		54CF0F7E285D9126007F833A /* ThreadsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsViewModel.swift; sourceTree = "<group>"; };
 		54CF0F80285D9392007F833A /* ThreadRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadRow.swift; sourceTree = "<group>"; };
+		54CF0F82285D9607007F833A /* CreateThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateThreadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				54CF0F58285D8984007F833A /* ContentView.swift */,
 				54CF0F69285D8B59007F833A /* FirstView.swift */,
+				54CF0F82285D9607007F833A /* CreateThreadView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				54CF0F81285D9392007F833A /* ThreadRow.swift in Sources */,
 				54CF0F57285D8984007F833A /* ThreadHubApp.swift in Sources */,
 				54CF0F7D285D8FB8007F833A /* Thread.swift in Sources */,
+				54CF0F83285D9607007F833A /* CreateThreadView.swift in Sources */,
 				54CF0F7F285D9126007F833A /* ThreadsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,7 @@ import SwiftUI
 struct FirstView: View {
     
     @ObservedObject private var threadsViewModel = ThreadsViewModel()
+    @State private var isShowSheet = false
     
     var body: some View {
         NavigationView {
@@ -19,12 +20,16 @@ struct FirstView: View {
                 }
             }
             
+            .sheet(isPresented: $isShowSheet) {
+                CreateThreadView()
+            }
+            
             .navigationTitle("threads")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        
+                        isShowSheet.toggle()
                     }) {
                         Image(systemName: "plus")
                     }
