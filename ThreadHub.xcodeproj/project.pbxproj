@@ -28,6 +28,7 @@
 		54CF0F8F285DA6C2007F833A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F8E285DA6C2007F833A /* Comment.swift */; };
 		54CF0F91285DA867007F833A /* FireComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F90285DA867007F833A /* FireComment.swift */; };
 		54CF0F93285DADDE007F833A /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F92285DADDE007F833A /* CommentsViewModel.swift */; };
+		54CF0F95285DB59D007F833A /* CreateCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F94285DB59D007F833A /* CreateCommentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		54CF0F8E285DA6C2007F833A /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		54CF0F90285DA867007F833A /* FireComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireComment.swift; sourceTree = "<group>"; };
 		54CF0F92285DADDE007F833A /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		54CF0F94285DB59D007F833A /* CreateCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCommentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				54CF0F69285D8B59007F833A /* FirstView.swift */,
 				54CF0F82285D9607007F833A /* CreateThreadView.swift */,
 				54CF0F8A285DA584007F833A /* ThreadView.swift */,
+				54CF0F94285DB59D007F833A /* CreateCommentView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				54CF0F59285D8984007F833A /* ContentView.swift in Sources */,
 				54CF0F8B285DA584007F833A /* ThreadView.swift in Sources */,
 				54CF0F8D285DA5EC007F833A /* CommentRow.swift in Sources */,
+				54CF0F95285DB59D007F833A /* CreateCommentView.swift in Sources */,
 				54CF0F6A285D8B59007F833A /* FirstView.swift in Sources */,
 				54CF0F81285D9392007F833A /* ThreadRow.swift in Sources */,
 				54CF0F57285D8984007F833A /* ThreadHubApp.swift in Sources */,
