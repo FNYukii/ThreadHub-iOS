@@ -17,6 +17,7 @@ class ThreadsViewModel: ObservableObject {
     init() {
         let db = Firestore.firestore()
         db.collection("threads")
+            .order(by: "createdAt", descending: true)
             .addSnapshotListener {(snapshot, error) in
                 guard let snapshot = snapshot else {
                     print("HELLO! Fail! Error fetching snapshots: \(error!)")
