@@ -18,11 +18,11 @@ struct CreateThreadView: View {
     var body: some View {
         NavigationView {
             Form {
-                TextField("display_name", text: $displayName)
+                TextField("title", text: $title)
                 
-                Section {
-                    TextField("title", text: $title)
-                    MyTextEditor(hintText: Text("detail"), text: $detail)
+                Section(header: Text("comment")) {
+                    TextField("display_name", text: $displayName)
+                    MyTextEditor(hintText: Text("text"), text: $detail)
                 }
             }
             
@@ -36,7 +36,7 @@ struct CreateThreadView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        FireThread.createThread(displayName: displayName, title: title, detail: detail)
+                        FireThread.createThread(title: title)
                         dismiss()
                     }) {
                         Text("create")

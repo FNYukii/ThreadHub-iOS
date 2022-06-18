@@ -17,8 +17,8 @@ struct Comment: Identifiable {
     
     init(document: QueryDocumentSnapshot) {
         self.id = document.documentID
-        self.threadId = document.get("threadId") as! String
         self.createdAt = (document.get("createdAt", serverTimestampBehavior: .estimate) as! Timestamp).dateValue()
+        self.threadId = document.get("threadId") as! String
         self.userId = document.get("userId") as! String
         self.displayName = document.get("displayName") as! String
         self.text = document.get("text") as! String

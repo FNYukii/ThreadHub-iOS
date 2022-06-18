@@ -26,6 +26,7 @@
 		54CF0F8B285DA584007F833A /* ThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F8A285DA584007F833A /* ThreadView.swift */; };
 		54CF0F8D285DA5EC007F833A /* CommentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F8C285DA5EC007F833A /* CommentRow.swift */; };
 		54CF0F8F285DA6C2007F833A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F8E285DA6C2007F833A /* Comment.swift */; };
+		54CF0F91285DA867007F833A /* FireComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F90285DA867007F833A /* FireComment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		54CF0F8A285DA584007F833A /* ThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadView.swift; sourceTree = "<group>"; };
 		54CF0F8C285DA5EC007F833A /* CommentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRow.swift; sourceTree = "<group>"; };
 		54CF0F8E285DA6C2007F833A /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		54CF0F90285DA867007F833A /* FireComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireComment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +147,9 @@
 		54CF0F68285D8AE8007F833A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				54CF0F86285D9A4A007F833A /* FireThread.swift */,
 				54CF0F88285D9ACD007F833A /* FireAuth.swift */,
+				54CF0F86285D9A4A007F833A /* FireThread.swift */,
+				54CF0F90285DA867007F833A /* FireComment.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				54CF0F7D285D8FB8007F833A /* Thread.swift in Sources */,
 				54CF0F83285D9607007F833A /* CreateThreadView.swift in Sources */,
 				54CF0F8F285DA6C2007F833A /* Comment.swift in Sources */,
+				54CF0F91285DA867007F833A /* FireComment.swift in Sources */,
 				54CF0F7F285D9126007F833A /* ThreadsViewModel.swift in Sources */,
 				54CF0F89285D9ACD007F833A /* FireAuth.swift in Sources */,
 				54CF0F85285D97C6007F833A /* MyTextEditor.swift in Sources */,
