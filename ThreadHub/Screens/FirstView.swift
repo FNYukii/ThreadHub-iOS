@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct FirstView: View {
+    
+    @ObservedObject private var threadsViewModel = ThreadsViewModel()
+    
     var body: some View {
         NavigationView {
             List {
-                Text("hello")
+                ForEach(threadsViewModel.threads) { thread in
+                    Text("\(thread.title)")
+                }
             }
             
             .navigationTitle("threads")
