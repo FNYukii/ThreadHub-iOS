@@ -9,18 +9,34 @@ import SwiftUI
 
 struct ThreadView: View {
     
-    let thread: Thread
+    private let thread: Thread
+    @ObservedObject private var commentsViewModel: CommentsViewModel
+    
+        
+    init(thread: Thread) {
+        self.thread = thread
+        self.commentsViewModel = CommentsViewModel(threadId: thread.id)
+    }
     
     var body: some View {
         
-        ScrollView {
-            VStack {
-                
+        List {
+            ForEach(commentsViewModel.comments) { comment in
+                CommentRow(comment: comment)
             }
         }
         
-            .navigationTitle(thread.title)
-            .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(thread.title)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    // TODO: Open sheet
+                }) {
+                    Image(systemName: "plus")
+                }
+            }
+        }
     }
 }
 
