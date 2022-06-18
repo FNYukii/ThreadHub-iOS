@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import SwiftUI
 
 class ThreadsViewModel: ObservableObject {
     
@@ -23,11 +24,16 @@ class ThreadsViewModel: ObservableObject {
                 }
                 print("HELLO! Success! Read threads. size: \(snapshot.documents.count)")
                 
+                var threads: [Thread] = []
                 snapshot.documents.forEach { document in
                     let thread = Thread(document: document)
-                    self.threads.append(thread)
+                    threads.append(thread)
                 }
-                self.isLoaded = true
+                
+                withAnimation {
+                    self.threads = threads
+                    self.isLoaded = true
+                }
             }
     }
 }
