@@ -11,10 +11,16 @@ struct CreateThreadView: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    @State private var displayName = ""
+    @State private var title = ""
+    @State private var detail = ""
+    
     var body: some View {
         NavigationView {
             Form {
-                
+                TextField("display_name", text: $displayName)
+                TextField("title", text: $title)
+                MyTextEditor(hintText: Text("detail"), text: $detail)
             }
             
             .navigationTitle("new_thread")
