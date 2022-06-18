@@ -17,7 +17,6 @@ struct ThreadRow: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text(thread.title)
                     .fontWeight(.bold)
-                Text(thread.detail)
             }
         }
     }

@@ -13,7 +13,7 @@ struct CreateThreadView: View {
     
     @State private var displayName = ""
     @State private var title = ""
-    @State private var detail = ""
+    @State private var text = ""
     
     var body: some View {
         NavigationView {
@@ -22,7 +22,7 @@ struct CreateThreadView: View {
                 
                 Section(header: Text("comment")) {
                     TextField("display_name", text: $displayName)
-                    MyTextEditor(hintText: Text("text"), text: $detail)
+                    MyTextEditor(hintText: Text("text"), text: $text)
                 }
             }
             
@@ -36,13 +36,15 @@ struct CreateThreadView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        FireThread.createThread(title: title)
+                        FireThread.createThread(title: title) { threadId in
+                            FireComment.createComment(threadId: threadId, displayName: displayName, text: text)
+                        }
                         dismiss()
                     }) {
                         Text("create")
                             .fontWeight(.bold)
                     }
-                    .disabled(displayName.isEmpty || title.isEmpty || detail.isEmpty)
+                    .disabled(displayName.isEmpty || title.isEmpty || text.isEmpty)
                 }
             }
         }

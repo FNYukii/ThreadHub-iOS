@@ -9,10 +9,11 @@ import Firebase
 
 class FireThread {
     
-    static func createThread(title: String) {
+    static func createThread(title: String, completion: ((String) -> Void)?) {
         if let userId = FireAuth.userId() {
             let db = Firestore.firestore()
-            db.collection("threads")
+            var ref: DocumentReference? = nil
+            ref = db.collection("threads")
                 .addDocument(data: [
                     "createdAt": FieldValue.serverTimestamp(),
                     "userId": userId,
@@ -21,7 +22,8 @@ class FireThread {
                     if let error = error {
                         print("HELLO! Fail! Error adding new document. Error: \(error)")
                     } else {
-                        print("HELLO! Success! Added new document.")
+                        print("HELLO! Success! Added new document. DocumentID: \(ref!.documentID)")
+                        completion?(ref!.documentID)
                     }
                 }
         }
