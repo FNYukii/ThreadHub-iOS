@@ -22,6 +22,6 @@ struct MyTextEditor: View {
                 .padding(.top, 8)
                 .padding(.leading, 5)
         }
-        .padding(.leading, -2)
+        .padding(.leading, -6)
     }
 }

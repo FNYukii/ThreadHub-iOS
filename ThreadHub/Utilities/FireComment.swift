@@ -1,5 +1,5 @@
 //
-//  FireThread.swift
+//  FireComment.swift
 //  ThreadHub
 //
 //  Created by Yu on 2022/06/18.
@@ -7,25 +7,30 @@
 
 import Firebase
 
-class FireThread {
+class FireComment {
     
-    static func createThread(title: String, completion: ((String) -> Void)?) {
+    static func createComment(threadId: String, displayName: String, text: String) {
         if let userId = FireAuth.userId() {
             let db = Firestore.firestore()
-            var ref: DocumentReference? = nil
-            ref = db.collection("threads")
+            db.collection("comments")
                 .addDocument(data: [
                     "createdAt": FieldValue.serverTimestamp(),
+                    "threadId": threadId,
                     "userId": userId,
-                    "title": title
+                    "displayName": displayName,
+                    "text": text,
                 ]) { error in
                     if let error = error {
                         print("HELLO! Fail! Error adding new document. Error: \(error)")
                     } else {
-                        print("HELLO! Success! Added new document. DocumentID: \(ref!.documentID)")
-                        completion?(ref!.documentID)
+                        print("HELLO! Success! Added new document.")
                     }
                 }
         }
     }
+    
+    static func deleteComment(commentId: String) {
+        // TODO: Delete
+    }
+    
 }
