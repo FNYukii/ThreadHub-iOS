@@ -21,9 +21,34 @@ struct CommentRow: View {
                     .lineLimit(1)
                 HowManyAgoText(from: comment.createdAt)
                     .foregroundColor(.secondary)
+                
+                Spacer()
+                
+                Menu {
+                    if comment.userId == FireAuth.userId() {
+                        
+                        Button(role: .destructive) {
+                            
+                        } label: {
+                            Label("delete", systemImage: "trash")
+                        }
+                    }
+                    
+                    Button(action: {
+                        
+                    }) {
+                        Label("report", systemImage: "flag")
+                    }
+                } label: {
+                    Image(systemName: "ellipsis")
+                        .padding(.vertical, 4)
+                        .foregroundColor(.secondary)
+                }
             }
             
             Text(comment.text)
+            Divider()
+                .padding(.top, 4)
         }
     }
     

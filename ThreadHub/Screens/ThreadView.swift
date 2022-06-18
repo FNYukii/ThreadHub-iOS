@@ -24,7 +24,9 @@ struct ThreadView: View {
             ForEach(commentsViewModel.comments) { comment in
                 CommentRow(comment: comment)
             }
+            .listRowSeparator(.hidden)
         }
+        .listStyle(PlainListStyle())
         
         .sheet(isPresented: $isShowSheet) {
             CreateCommentView(threadId: thread.id)
