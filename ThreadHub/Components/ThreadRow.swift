@@ -9,15 +9,59 @@ import SwiftUI
 
 struct ThreadRow: View {
     
-    let thread: Thread
+    private let thread: Thread
+    @State private var firstComment: Comment? = nil
+    @ObservedObject private var commentsCountViewModel: CommentsCountViewModel
+    
+    init(thread: Thread) {
+        self.thread = thread
+        self.commentsCountViewModel = CommentsCountViewModel(threadId: thread.id)
+    }
     
     var body: some View {
-        
         NavigationLink(destination: ThreadView(thread: thread)) {
             VStack(alignment: .leading, spacing: 8) {
-                Text(thread.title)
-                    .fontWeight(.bold)
+                HStack(alignment: .top) {
+                    Text(thread.title)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.leading)
+                    
+                    Spacer()
+                    
+                    Menu {
+                        Button(action: {
+                            
+                        }) {
+                            Label("report", systemImage: "flag")
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .foregroundColor(.secondary)
+                            .padding(.vertical, 4)
+                    }
+                }
+                
+                
+                Text(firstComment == nil ? "---" : firstComment!.text)
+                    .multilineTextAlignment(.leading)
+                
+                HStack(spacing: 2) {
+                    Text(commentsCountViewModel.isLoaded ? String(commentsCountViewModel.count) : "-")
+                    Text("comments")
+                }
+                .foregroundColor(.secondary)
+                
+                Divider()
             }
+            .padding(.horizontal)
+        }
+        .foregroundColor(.primary)
+        .onAppear(perform: load)
+    }
+    
+    private func load() {
+        FireComment.readFirstComment(threadId: thread.id) { comment in
+            self.firstComment = comment
         }
     }
 }

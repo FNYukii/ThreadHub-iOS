@@ -16,14 +16,41 @@ struct CommentRow: View {
             HStack {
                 Text(comment.displayName)
                     .fontWeight(.bold)
+                    .lineLimit(1)
                 Text("@\(comment.userId)")
                     .foregroundColor(.secondary)
                     .lineLimit(1)
                 HowManyAgoText(from: comment.createdAt)
                     .foregroundColor(.secondary)
+                    .lineLimit(1)
+                
+                Spacer()
+                
+                Menu {
+                    if comment.userId == FireAuth.userId() {
+                        
+                        Button(role: .destructive) {
+                            
+                        } label: {
+                            Label("delete", systemImage: "trash")
+                        }
+                    }
+                    
+                    Button(action: {
+                        
+                    }) {
+                        Label("report", systemImage: "flag")
+                    }
+                } label: {
+                    Image(systemName: "ellipsis")
+                        .padding(.vertical, 4)
+                        .foregroundColor(.secondary)
+                }
             }
             
             Text(comment.text)
+            Divider()
+                .padding(.top, 4)
         }
     }
     

@@ -17,8 +17,10 @@
 "title" = "タイトル";
 "comment" = "コメント";
 "display_name" = "ニックネーム";
-"text" = "テキスト";
 
 // CreateCommentView
 "add" = "追加";
 "new_comment" = "新規コメント";
+
+// ThreadRow
+"comments" = "コメント";

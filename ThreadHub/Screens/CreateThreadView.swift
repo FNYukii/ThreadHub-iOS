@@ -15,6 +15,11 @@ struct CreateThreadView: View {
     @State private var title = ""
     @State private var text = ""
     
+    init() {
+        let displayName = UserDefaults.standard.string(forKey: "displayName") ?? ""
+        _displayName = State(initialValue: displayName)
+    }
+    
     var body: some View {
         NavigationView {
             Form {
@@ -22,7 +27,7 @@ struct CreateThreadView: View {
                 
                 Section(header: Text("comment")) {
                     TextField("display_name", text: $displayName)
-                    MyTextEditor(hintText: Text("text"), text: $text)
+                    MyTextEditor(hintText: Text("comment"), text: $text)
                 }
             }
             
@@ -37,6 +42,7 @@ struct CreateThreadView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         FireThread.createThread(title: title) { threadId in
+                            UserDefaults.standard.set(displayName, forKey: "displayName")
                             FireComment.createComment(threadId: threadId, displayName: displayName, text: text)
                         }
                         dismiss()

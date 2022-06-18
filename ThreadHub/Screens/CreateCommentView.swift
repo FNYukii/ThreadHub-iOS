@@ -11,15 +11,21 @@ struct CreateCommentView: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    let threadId: String
+    private let threadId: String
     @State private var displayName = ""
     @State private var text = ""
+    
+    init(threadId: String) {
+        self.threadId = threadId
+        let displayName = UserDefaults.standard.string(forKey: "displayName") ?? ""
+        _displayName = State(initialValue: displayName)
+    }
         
     var body: some View {
         NavigationView {
             Form {
                 TextField("display_name", text: $displayName)
-                MyTextEditor(hintText: Text("text"), text: $text)
+                MyTextEditor(hintText: Text("comment"), text: $text)
             }
             
             .navigationTitle("new_comment")
@@ -32,6 +38,7 @@ struct CreateCommentView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
+                        UserDefaults.standard.set(displayName, forKey: "displayName")
                         FireComment.createComment(threadId: threadId, displayName: displayName, text: text)
                         dismiss()
                     }) {
