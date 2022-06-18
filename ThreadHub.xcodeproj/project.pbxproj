@@ -23,6 +23,8 @@
 		54CF0F85285D97C6007F833A /* MyTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F84285D97C6007F833A /* MyTextEditor.swift */; };
 		54CF0F87285D9A4A007F833A /* FireThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F86285D9A4A007F833A /* FireThread.swift */; };
 		54CF0F89285D9ACD007F833A /* FireAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F88285D9ACD007F833A /* FireAuth.swift */; };
+		54CF0F8B285DA584007F833A /* ThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F8A285DA584007F833A /* ThreadView.swift */; };
+		54CF0F8D285DA5EC007F833A /* CommentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F8C285DA5EC007F833A /* CommentRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		54CF0F84285D97C6007F833A /* MyTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextEditor.swift; sourceTree = "<group>"; };
 		54CF0F86285D9A4A007F833A /* FireThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireThread.swift; sourceTree = "<group>"; };
 		54CF0F88285D9ACD007F833A /* FireAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuth.swift; sourceTree = "<group>"; };
+		54CF0F8A285DA584007F833A /* ThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadView.swift; sourceTree = "<group>"; };
+		54CF0F8C285DA5EC007F833A /* CommentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 				54CF0F58285D8984007F833A /* ContentView.swift */,
 				54CF0F69285D8B59007F833A /* FirstView.swift */,
 				54CF0F82285D9607007F833A /* CreateThreadView.swift */,
+				54CF0F8A285DA584007F833A /* ThreadView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				54CF0F80285D9392007F833A /* ThreadRow.swift */,
+				54CF0F8C285DA5EC007F833A /* CommentRow.swift */,
 				54CF0F84285D97C6007F833A /* MyTextEditor.swift */,
 			);
 			path = Components;
@@ -223,6 +229,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				54CF0F59285D8984007F833A /* ContentView.swift in Sources */,
+				54CF0F8B285DA584007F833A /* ThreadView.swift in Sources */,
+				54CF0F8D285DA5EC007F833A /* CommentRow.swift in Sources */,
 				54CF0F6A285D8B59007F833A /* FirstView.swift in Sources */,
 				54CF0F81285D9392007F833A /* ThreadRow.swift in Sources */,
 				54CF0F57285D8984007F833A /* ThreadHubApp.swift in Sources */,
