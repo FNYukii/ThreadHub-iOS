@@ -22,7 +22,7 @@ struct ThreadView: View {
         
         List {
             ForEach(commentsViewModel.comments) { comment in
-                Text(comment.text)
+                CommentRow(comment: comment)
             }
         }
         
