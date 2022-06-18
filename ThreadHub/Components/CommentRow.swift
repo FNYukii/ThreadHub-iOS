@@ -49,8 +49,6 @@ struct CommentRow: View {
             }
             
             Text(comment.text)
-            Divider()
-                .padding(.top, 4)
         }
     }
     

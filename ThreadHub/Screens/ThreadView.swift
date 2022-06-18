@@ -24,7 +24,8 @@ struct ThreadView: View {
             ForEach(commentsViewModel.comments) { comment in
                 CommentRow(comment: comment)
             }
-            .listRowSeparator(.hidden)
+            .listRowSeparator(.hidden, edges: .top)
+            .listRowSeparator(.visible, edges: .bottom)
         }
         .listStyle(PlainListStyle())
         
