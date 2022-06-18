@@ -15,8 +15,26 @@ struct ThreadRow: View {
     var body: some View {
         NavigationLink(destination: ThreadView(thread: thread)) {
             VStack(alignment: .leading, spacing: 8) {
-                Text(thread.title)
-                    .fontWeight(.bold)
+                HStack(alignment: .top) {
+                    Text(thread.title)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.leading)
+                    
+                    Spacer()
+                    
+                    Menu {
+                        Button(action: {
+                            
+                        }) {
+                            Label("report", systemImage: "flag")
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .foregroundColor(.secondary)
+                            .padding(.vertical, 4)
+                    }
+                }
+                
                 
                 Text(firstComment == nil ? "---" : firstComment!.text)
                     .multilineTextAlignment(.leading)
