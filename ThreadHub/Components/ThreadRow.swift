@@ -9,8 +9,14 @@ import SwiftUI
 
 struct ThreadRow: View {
     
-    let thread: Thread
+    private let thread: Thread
     @State private var firstComment: Comment? = nil
+    @ObservedObject private var commentsCountViewModel: CommentsCountViewModel
+    
+    init(thread: Thread) {
+        self.thread = thread
+        self.commentsCountViewModel = CommentsCountViewModel(threadId: thread.id)
+    }
     
     var body: some View {
         NavigationLink(destination: ThreadView(thread: thread)) {
@@ -38,6 +44,12 @@ struct ThreadRow: View {
                 
                 Text(firstComment == nil ? "---" : firstComment!.text)
                     .multilineTextAlignment(.leading)
+                
+                HStack(spacing: 2) {
+                    Text(commentsCountViewModel.isLoaded ? String(commentsCountViewModel.count) : "-")
+                    Text("comments")
+                }
+                .foregroundColor(.secondary)
                 
                 Divider()
             }
