@@ -50,6 +50,7 @@ struct CommentRow: View {
             
             Text(comment.text)
         }
+        .padding(.bottom, 6)
     }
     
     private func HowManyAgoText(from: Date) -> Text {
