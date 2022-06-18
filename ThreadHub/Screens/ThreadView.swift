@@ -11,7 +11,7 @@ struct ThreadView: View {
     
     private let thread: Thread
     @ObservedObject private var commentsViewModel: CommentsViewModel
-    
+    @State private var isShowSheet = false
         
     init(thread: Thread) {
         self.thread = thread
@@ -26,12 +26,16 @@ struct ThreadView: View {
             }
         }
         
+        .sheet(isPresented: $isShowSheet) {
+            CreateCommentView(threadId: thread.id)
+        }
+        
         .navigationTitle(thread.title)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
-                    // TODO: Open sheet
+                    isShowSheet.toggle()
                 }) {
                     Image(systemName: "plus")
                 }
