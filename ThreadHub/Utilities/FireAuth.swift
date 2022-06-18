@@ -21,7 +21,11 @@ class FireAuth {
         }
     }
     
-    static func userId() {
-        // TODO: Return uid
+    static func userId() -> String? {
+        let user = Auth.auth().currentUser
+        if let user = user {
+            return user.uid
+        }
+        return nil
     }
 }

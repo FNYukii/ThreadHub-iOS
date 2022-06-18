@@ -36,11 +36,13 @@ struct CreateThreadView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
+                        FireThread.createThread(displayName: displayName, title: title, detail: detail)
                         dismiss()
                     }) {
                         Text("create")
                             .fontWeight(.bold)
                     }
+                    .disabled(displayName.isEmpty || title.isEmpty || detail.isEmpty)
                 }
             }
         }
