@@ -17,7 +17,6 @@
 "title" = "タイトル";
 "comment" = "コメント";
 "display_name" = "ニックネーム";
-"text" = "テキスト";
 
 // CreateCommentView
 "add" = "追加";

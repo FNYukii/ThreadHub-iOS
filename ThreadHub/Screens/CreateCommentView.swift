@@ -19,7 +19,7 @@ struct CreateCommentView: View {
         NavigationView {
             Form {
                 TextField("display_name", text: $displayName)
-                MyTextEditor(hintText: Text("text"), text: $text)
+                MyTextEditor(hintText: Text("comment"), text: $text)
             }
             
             .navigationTitle("new_comment")

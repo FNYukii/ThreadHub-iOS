@@ -22,7 +22,7 @@ struct CreateThreadView: View {
                 
                 Section(header: Text("comment")) {
                     TextField("display_name", text: $displayName)
-                    MyTextEditor(hintText: Text("text"), text: $text)
+                    MyTextEditor(hintText: Text("comment"), text: $text)
                 }
             }
             
