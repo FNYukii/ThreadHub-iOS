@@ -15,7 +15,7 @@ struct FirstView: View {
         NavigationView {
             List {
                 ForEach(threadsViewModel.threads) { thread in
-                    Text("\(thread.title)")
+                    ThreadRow(thread: thread)
                 }
             }
             
