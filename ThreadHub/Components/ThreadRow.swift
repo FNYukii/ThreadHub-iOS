@@ -19,8 +19,13 @@ struct ThreadRow: View {
                     .fontWeight(.bold)
                 
                 Text(firstComment == nil ? "---" : firstComment!.text)
+                    .multilineTextAlignment(.leading)
+                
+                Divider()
             }
+            .padding(.horizontal)
         }
+        .foregroundColor(.primary)
         .onAppear(perform: load)
     }
     
