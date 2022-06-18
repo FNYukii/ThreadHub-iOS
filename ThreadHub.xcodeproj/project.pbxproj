@@ -80,7 +80,7 @@
 				54CF0F56285D8984007F833A /* ThreadHubApp.swift */,
 				54CF0F64285D8ACC007F833A /* Screens */,
 				54CF0F67285D8AE1007F833A /* Components */,
-				54CF0F65285D8AD4007F833A /* Models */,
+				54CF0F65285D8AD4007F833A /* Entities */,
 				54CF0F66285D8ADB007F833A /* ViewModels */,
 				54CF0F68285D8AE8007F833A /* Utilities */,
 				54CF0F71285D8CB5007F833A /* Localizable.strings */,
@@ -108,12 +108,12 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		54CF0F65285D8AD4007F833A /* Models */ = {
+		54CF0F65285D8AD4007F833A /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				54CF0F7C285D8FB8007F833A /* Thread.swift */,
 			);
-			path = Models;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		54CF0F66285D8ADB007F833A /* ViewModels */ = {
