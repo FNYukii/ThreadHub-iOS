@@ -26,8 +26,17 @@ struct ThreadView: View {
             }
         }
         
-            .navigationTitle(thread.title)
-            .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(thread.title)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    // TODO: Open sheet
+                }) {
+                    Image(systemName: "plus")
+                }
+            }
+        }
     }
 }
 
