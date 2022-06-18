@@ -15,13 +15,12 @@ struct FirstView: View {
     var body: some View {
         NavigationView {
             
-            ScrollView {
-                VStack(alignment: .leading) {
-                    ForEach(threadsViewModel.threads) { thread in
-                        ThreadRow(thread: thread)
-                    }
+            List {
+                ForEach(threadsViewModel.threads) { thread in
+                    ThreadRow(thread: thread)
                 }
             }
+            .listStyle(PlainListStyle())
             
             .sheet(isPresented: $isShowSheet) {
                 CreateThreadView()

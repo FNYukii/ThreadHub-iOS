@@ -19,42 +19,38 @@ struct ThreadRow: View {
     }
     
     var body: some View {
-        NavigationLink(destination: ThreadView(thread: thread)) {
-            VStack(alignment: .leading, spacing: 8) {
-                HStack(alignment: .top) {
-                    Text(thread.title)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.leading)
-                    
-                    Spacer()
-                    
-                    Menu {
-                        Button(action: {
-                            
-                        }) {
-                            Label("report", systemImage: "flag")
-                        }
-                    } label: {
-                        Image(systemName: "ellipsis")
-                            .foregroundColor(.secondary)
-                            .padding(.vertical, 4)
-                    }
-                }
-                
-                
-                Text(firstComment == nil ? "---" : firstComment!.text)
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .top) {
+                Text(thread.title)
+                    .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                 
-                HStack(spacing: 2) {
-                    Text(commentsCountViewModel.isLoaded ? String(commentsCountViewModel.count) : "-")
-                    Text("comments")
-                }
-                .foregroundColor(.secondary)
+                Spacer()
                 
-                Divider()
+                Menu {
+                    Button(action: {
+                        
+                    }) {
+                        Label("report", systemImage: "flag")
+                    }
+                } label: {
+                    Image(systemName: "ellipsis")
+                        .foregroundColor(.secondary)
+                        .padding(.vertical, 4)
+                }
             }
-            .padding(.horizontal)
+            
+            
+            Text(firstComment == nil ? "---" : firstComment!.text)
+                .multilineTextAlignment(.leading)
+            
+            HStack(spacing: 2) {
+                Text(commentsCountViewModel.isLoaded ? String(commentsCountViewModel.count) : "-")
+                Text("comments")
+            }
+            .foregroundColor(.secondary)
         }
+        .background( NavigationLink("", destination: ThreadView(thread: thread)).opacity(0) )
         .foregroundColor(.primary)
         .onAppear(perform: load)
     }
