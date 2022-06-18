@@ -18,7 +18,9 @@ struct FirstView: View {
                 ForEach(threadsViewModel.threads) { thread in
                     ThreadRow(thread: thread)
                 }
+                .listRowSeparator(.hidden)
             }
+            .listStyle(PlainListStyle())
             
             .sheet(isPresented: $isShowSheet) {
                 CreateThreadView()

@@ -12,7 +12,6 @@ struct ThreadRow: View {
     let thread: Thread
     
     var body: some View {
-        
         NavigationLink(destination: ThreadView(thread: thread)) {
             VStack(alignment: .leading, spacing: 8) {
                 Text(thread.title)
