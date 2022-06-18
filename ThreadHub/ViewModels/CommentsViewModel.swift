@@ -17,7 +17,7 @@ class CommentsViewModel: ObservableObject {
         let db = Firestore.firestore()
         db.collection("comments")
             .whereField("threadId", isEqualTo: threadId)
-            .order(by: "createdAt", descending: true)
+            .order(by: "createdAt", descending: false)
             .addSnapshotListener {(snapshot, error) in
                 guard let snapshot = snapshot else {
                     print("HELLO! Fail! Error fetching snapshots: \(error!)")
