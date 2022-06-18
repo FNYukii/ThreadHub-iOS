@@ -49,9 +49,8 @@ struct CommentRow: View {
             }
             
             Text(comment.text)
-            Divider()
-                .padding(.top, 4)
         }
+        .padding(.bottom, 6)
     }
     
     private func HowManyAgoText(from: Date) -> Text {
