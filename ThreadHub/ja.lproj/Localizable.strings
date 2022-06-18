@@ -8,3 +8,12 @@
 
 // FirstView
 "threads" = "スレッド";
+
+// CreateThreadView
+"new_thread" = "新規スレッド";
+"cancel" = "キャンセル";
+"create" = "作成";
+
+"display_name" = "ニックネーム";
+"title" = "タイトル";
+"detail" = "説明";

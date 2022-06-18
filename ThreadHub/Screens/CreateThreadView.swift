@@ -19,8 +19,11 @@ struct CreateThreadView: View {
         NavigationView {
             Form {
                 TextField("display_name", text: $displayName)
-                TextField("title", text: $title)
-                MyTextEditor(hintText: Text("detail"), text: $detail)
+                
+                Section {
+                    TextField("title", text: $title)
+                    MyTextEditor(hintText: Text("detail"), text: $detail)
+                }
             }
             
             .navigationTitle("new_thread")
