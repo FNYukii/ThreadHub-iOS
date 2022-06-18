@@ -9,13 +9,20 @@ import SwiftUI
 
 struct ThreadView: View {
     
-    let thread: Thread
+    private let thread: Thread
+    @ObservedObject private var commentsViewModel: CommentsViewModel
+    
+        
+    init(thread: Thread) {
+        self.thread = thread
+        self.commentsViewModel = CommentsViewModel(threadId: thread.id)
+    }
     
     var body: some View {
         
-        ScrollView {
-            VStack {
-                
+        List {
+            ForEach(commentsViewModel.comments) { comment in
+                Text(comment.text)
             }
         }
         

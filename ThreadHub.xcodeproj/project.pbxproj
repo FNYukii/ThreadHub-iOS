@@ -27,6 +27,7 @@
 		54CF0F8D285DA5EC007F833A /* CommentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F8C285DA5EC007F833A /* CommentRow.swift */; };
 		54CF0F8F285DA6C2007F833A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F8E285DA6C2007F833A /* Comment.swift */; };
 		54CF0F91285DA867007F833A /* FireComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F90285DA867007F833A /* FireComment.swift */; };
+		54CF0F93285DADDE007F833A /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CF0F92285DADDE007F833A /* CommentsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		54CF0F8C285DA5EC007F833A /* CommentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRow.swift; sourceTree = "<group>"; };
 		54CF0F8E285DA6C2007F833A /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		54CF0F90285DA867007F833A /* FireComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireComment.swift; sourceTree = "<group>"; };
+		54CF0F92285DADDE007F833A /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				54CF0F7E285D9126007F833A /* ThreadsViewModel.swift */,
+				54CF0F92285DADDE007F833A /* CommentsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54CF0F93285DADDE007F833A /* CommentsViewModel.swift in Sources */,
 				54CF0F59285D8984007F833A /* ContentView.swift in Sources */,
 				54CF0F8B285DA584007F833A /* ThreadView.swift in Sources */,
 				54CF0F8D285DA5EC007F833A /* CommentRow.swift in Sources */,
