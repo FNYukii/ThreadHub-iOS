@@ -1,9 +1,11 @@
-# ThreadHub-iOS
+# Thread Hub iOS
 ## 概要
-iOS向けの匿名掲示板アプリ
+匿名掲示板アプリ「Thread Hub」のiOS版。
+ユーザーがスレッドを作成し、他のユーザーがそれにコメントを追加していく仕様です。
 
 ## フレームワーク・ライブラリ
-- firebase
+- SwiftUI
+- [Firebase](https://github.com/firebase/firebase-ios-sdk)
 
 ## スクリーンショット
 <div style="display: flex; justify-content: space-between;">
