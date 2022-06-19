@@ -54,6 +54,22 @@ struct CommentRow: View {
         }
         .padding(.vertical, 6)
         
+        .contextMenu {
+            if comment.userId == FireAuth.userId() && !comment.isFirst {
+                Button(role: .destructive) {
+                    isShowDialog.toggle()
+                } label: {
+                    Label("delete_comment", systemImage: "trash")
+                }
+            }
+            
+            Button(action: {
+                // TODO: Report
+            }) {
+                Label("report_comment", systemImage: "flag")
+            }
+        }
+        
         .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {
             Button("delete_comment", role: .destructive) {
                 FireComment.deleteComment(commentId: comment.id)
