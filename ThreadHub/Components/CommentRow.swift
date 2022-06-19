@@ -44,14 +44,31 @@ struct CommentRow: View {
                     }
                 } label: {
                     Image(systemName: "ellipsis")
-                        .padding(.vertical, 6)
+                        .padding(.top, 2)
+                        .padding(.bottom, 6)
                         .foregroundColor(.secondary)
                 }
             }
             
             Text(comment.text)
         }
-        .padding(.bottom, 6)
+        .padding(.vertical, 6)
+        
+        .contextMenu {
+            if comment.userId == FireAuth.userId() && !comment.isFirst {
+                Button(role: .destructive) {
+                    isShowDialog.toggle()
+                } label: {
+                    Label("delete_comment", systemImage: "trash")
+                }
+            }
+            
+            Button(action: {
+                // TODO: Report
+            }) {
+                Label("report_comment", systemImage: "flag")
+            }
+        }
         
         .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {
             Button("delete_comment", role: .destructive) {
