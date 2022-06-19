@@ -13,6 +13,8 @@ struct ThreadRow: View {
     @State private var firstComment: Comment? = nil
     @ObservedObject private var commentsCountViewModel: CommentsCountViewModel
     
+    @State private var isShowDialog = false
+    
     init(thread: Thread) {
         self.thread = thread
         self.commentsCountViewModel = CommentsCountViewModel(threadId: thread.id)
@@ -28,18 +30,25 @@ struct ThreadRow: View {
                 Spacer()
                 
                 Menu {
+                    if thread.userId == FireAuth.userId() {
+                        Button(role: .destructive) {
+                            isShowDialog.toggle()
+                        } label: {
+                            Label("delete_thread", systemImage: "trash")
+                        }
+                    }
+                    
                     Button(action: {
-                        
+                        // TODO: Report
                     }) {
-                        Label("report", systemImage: "flag")
+                        Label("report_thread", systemImage: "flag")
                     }
                 } label: {
                     Image(systemName: "ellipsis")
                         .foregroundColor(.secondary)
-                        .padding(.vertical, 4)
+                        .padding(.vertical, 6)
                 }
             }
-            
             
             Text(firstComment == nil ? "---" : firstComment!.text)
                 .multilineTextAlignment(.leading)
@@ -53,6 +62,14 @@ struct ThreadRow: View {
         .background( NavigationLink("", destination: ThreadView(thread: thread)).opacity(0) )
         .foregroundColor(.primary)
         .onAppear(perform: load)
+        
+        .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {
+            Button("delete_thread", role: .destructive) {
+                FireThread.deleteThread(threadId: thread.id)
+            }
+        } message: {
+            Text("are_you_sure_you_want_to_delete_this_thread")
+        }
     }
     
     private func load() {

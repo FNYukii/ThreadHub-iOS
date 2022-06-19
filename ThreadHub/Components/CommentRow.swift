@@ -11,6 +11,8 @@ struct CommentRow: View {
     
     let comment: Comment
     
+    @State private var isShowDialog = false
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
@@ -28,22 +30,21 @@ struct CommentRow: View {
                 
                 Menu {
                     if comment.userId == FireAuth.userId() {
-                        
                         Button(role: .destructive) {
-                            
+                            isShowDialog.toggle()
                         } label: {
-                            Label("delete", systemImage: "trash")
+                            Label("delete_comment", systemImage: "trash")
                         }
                     }
                     
                     Button(action: {
-                        
+                        // TODO: Report
                     }) {
-                        Label("report", systemImage: "flag")
+                        Label("report_comment", systemImage: "flag")
                     }
                 } label: {
                     Image(systemName: "ellipsis")
-                        .padding(.vertical, 4)
+                        .padding(.vertical, 6)
                         .foregroundColor(.secondary)
                 }
             }
@@ -51,6 +52,14 @@ struct CommentRow: View {
             Text(comment.text)
         }
         .padding(.bottom, 6)
+        
+        .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {
+            Button("delete_comment", role: .destructive) {
+                FireComment.deleteComment(commentId: comment.id)
+            }
+        } message: {
+            Text("are_you_sure_you_want_to_delete_this_comment")
+        }
     }
     
     private func HowManyAgoText(from: Date) -> Text {

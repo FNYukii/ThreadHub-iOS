@@ -50,7 +50,15 @@ class FireComment {
     }
     
     static func deleteComment(commentId: String) {
-        // TODO: Delete
+        let db = Firestore.firestore()
+        db.collection("comments")
+            .document(commentId)
+            .delete() { err in
+            if let err = err {
+                print("HELLO! Fail! Error removing document: \(err)")
+            } else {
+                print("HELLO! Success! Document successfully removed!")
+            }
+        }
     }
-    
 }
