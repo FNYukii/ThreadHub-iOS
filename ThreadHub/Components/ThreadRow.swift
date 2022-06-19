@@ -50,7 +50,7 @@ struct ThreadRow: View {
                 }
                 .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {
                     Button("delete_thread", role: .destructive) {
-                        // TODO: Delete
+                        FireThread.deleteThread(threadId: thread.id)
                     }
                 } message: {
                     Text("are_you_sure_you_want_to_delete_this_thread")

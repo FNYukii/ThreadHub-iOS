@@ -28,4 +28,17 @@ class FireThread {
                 }
         }
     }
+    
+    static func deleteThread(threadId: String) {
+        let db = Firestore.firestore()
+        db.collection("threads")
+            .document(threadId)
+            .delete() { err in
+            if let err = err {
+                print("HELLO! Fail! Error removing document: \(err)")
+            } else {
+                print("HELLO! Success! Document successfully removed!")
+            }
+        }
+    }
 }
