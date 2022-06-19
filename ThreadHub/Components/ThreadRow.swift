@@ -64,6 +64,22 @@ struct ThreadRow: View {
         .padding(.vertical, 6)
         .onAppear(perform: load)
         
+        .contextMenu {
+            if thread.userId == FireAuth.userId() {
+                Button(role: .destructive) {
+                    isShowDialog.toggle()
+                } label: {
+                    Label("delete_thread", systemImage: "trash")
+                }
+            }
+            
+            Button(action: {
+                // TODO: Report
+            }) {
+                Label("report_thread", systemImage: "flag")
+            }
+        }
+        
         .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {
             Button("delete_thread", role: .destructive) {
                 FireThread.deleteThread(threadId: thread.id)
