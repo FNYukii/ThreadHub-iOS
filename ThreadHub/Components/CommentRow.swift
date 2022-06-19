@@ -44,14 +44,15 @@ struct CommentRow: View {
                     }
                 } label: {
                     Image(systemName: "ellipsis")
-                        .padding(.vertical, 6)
+                        .padding(.top, 2)
+                        .padding(.bottom, 6)
                         .foregroundColor(.secondary)
                 }
             }
             
             Text(comment.text)
         }
-        .padding(.bottom, 6)
+        .padding(.vertical, 6)
         
         .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {
             Button("delete_comment", role: .destructive) {
