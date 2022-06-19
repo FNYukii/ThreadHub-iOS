@@ -16,7 +16,7 @@ struct Comment: Identifiable {
     let text: String
     let isFirst: Bool
     
-    init(document: QueryDocumentSnapshot, isFirst: Bool = false) {
+    init(document: QueryDocumentSnapshot, isFirst: Bool) {
         self.id = document.documentID
         self.createdAt = (document.get("createdAt", serverTimestampBehavior: .estimate) as! Timestamp).dateValue()
         self.threadId = document.get("threadId") as! String
