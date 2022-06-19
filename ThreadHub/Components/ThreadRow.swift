@@ -44,7 +44,7 @@ struct ThreadRow: View {
                 } label: {
                     Image(systemName: "ellipsis")
                         .foregroundColor(.secondary)
-                        .padding(.vertical, 4)
+                        .padding(.vertical, 6)
                 }
             }
             

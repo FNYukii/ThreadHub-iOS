@@ -42,7 +42,7 @@ struct CommentRow: View {
                     }
                 } label: {
                     Image(systemName: "ellipsis")
-                        .padding(.vertical, )
+                        .padding(.vertical, 6)
                         .foregroundColor(.secondary)
                 }
             }
