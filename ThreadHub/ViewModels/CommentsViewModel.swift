@@ -26,8 +26,10 @@ class CommentsViewModel: ObservableObject {
                 print("HELLO! Success! Read comments. size: \(snapshot.documents.count)")
                 
                 var comments: [Comment] = []
+                var firstFlag = true
                 snapshot.documents.forEach { document in
-                    let comment = Comment(document: document)
+                    let comment = Comment(document: document, isFirst: firstFlag)
+                    firstFlag = false
                     comments.append(comment)
                 }
                 
