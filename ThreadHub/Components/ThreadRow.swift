@@ -48,13 +48,6 @@ struct ThreadRow: View {
                         .foregroundColor(.secondary)
                         .padding(.vertical, 6)
                 }
-                .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {
-                    Button("delete_thread", role: .destructive) {
-                        FireThread.deleteThread(threadId: thread.id)
-                    }
-                } message: {
-                    Text("are_you_sure_you_want_to_delete_this_thread")
-                }
             }
             
             Text(firstComment == nil ? "---" : firstComment!.text)
@@ -69,6 +62,14 @@ struct ThreadRow: View {
         .background( NavigationLink("", destination: ThreadView(thread: thread)).opacity(0) )
         .foregroundColor(.primary)
         .onAppear(perform: load)
+        
+        .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {
+            Button("delete_thread", role: .destructive) {
+                FireThread.deleteThread(threadId: thread.id)
+            }
+        } message: {
+            Text("are_you_sure_you_want_to_delete_this_thread")
+        }
     }
     
     private func load() {

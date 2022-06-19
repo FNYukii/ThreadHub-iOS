@@ -47,18 +47,19 @@ struct CommentRow: View {
                         .padding(.vertical, 6)
                         .foregroundColor(.secondary)
                 }
-                .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {
-                    Button("delete_comment", role: .destructive) {
-                        FireComment.deleteComment(commentId: comment.id)
-                    }
-                } message: {
-                    Text("are_you_sure_you_want_to_delete_this_comment")
-                }
             }
             
             Text(comment.text)
         }
         .padding(.bottom, 6)
+        
+        .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {
+            Button("delete_comment", role: .destructive) {
+                FireComment.deleteComment(commentId: comment.id)
+            }
+        } message: {
+            Text("are_you_sure_you_want_to_delete_this_comment")
+        }
     }
     
     private func HowManyAgoText(from: Date) -> Text {
