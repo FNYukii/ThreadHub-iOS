@@ -13,6 +13,8 @@ struct ThreadRow: View {
     @State private var firstComment: Comment? = nil
     @ObservedObject private var commentsCountViewModel: CommentsCountViewModel
     
+    @State private var isShowDialog = false
+    
     init(thread: Thread) {
         self.thread = thread
         self.commentsCountViewModel = CommentsCountViewModel(threadId: thread.id)
@@ -30,7 +32,7 @@ struct ThreadRow: View {
                 Menu {
                     if thread.userId == FireAuth.userId() {
                         Button(role: .destructive) {
-                            // TODO: Delete
+                            isShowDialog.toggle()
                         } label: {
                             Label("delete_thread", systemImage: "trash")
                         }
@@ -45,6 +47,13 @@ struct ThreadRow: View {
                     Image(systemName: "ellipsis")
                         .foregroundColor(.secondary)
                         .padding(.vertical, 6)
+                }
+                .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {
+                    Button("delete_thread", role: .destructive) {
+                        // TODO: Delete
+                    }
+                } message: {
+                    Text("are_you_sure_you_want_to_delete_this_thread")
                 }
             }
             
