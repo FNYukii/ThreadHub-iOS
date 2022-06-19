@@ -14,13 +14,15 @@ struct Comment: Identifiable {
     let userId: String
     let displayName: String
     let text: String
+    let isFirst: Bool
     
-    init(document: QueryDocumentSnapshot) {
+    init(document: QueryDocumentSnapshot, isFirst: Bool) {
         self.id = document.documentID
         self.createdAt = (document.get("createdAt", serverTimestampBehavior: .estimate) as! Timestamp).dateValue()
         self.threadId = document.get("threadId") as! String
         self.userId = document.get("userId") as! String
         self.displayName = document.get("displayName") as! String
         self.text = document.get("text") as! String
+        self.isFirst = isFirst
     }
 }

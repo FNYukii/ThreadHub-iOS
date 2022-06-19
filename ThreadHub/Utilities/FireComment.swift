@@ -23,7 +23,7 @@ class FireComment {
                 print("HELLO! Success! Read comments. size: \(snapshot.documents.count)")
                 
                 if let document = snapshot.documents.first {
-                    let comment = Comment(document: document)
+                    let comment = Comment(document: document, isFirst: true)
                     completion?(comment)
                 }
             }

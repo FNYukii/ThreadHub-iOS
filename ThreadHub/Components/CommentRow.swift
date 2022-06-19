@@ -29,7 +29,7 @@ struct CommentRow: View {
                 Spacer()
                 
                 Menu {
-                    if comment.userId == FireAuth.userId() {
+                    if comment.userId == FireAuth.userId() && !comment.isFirst {
                         Button(role: .destructive) {
                             isShowDialog.toggle()
                         } label: {
