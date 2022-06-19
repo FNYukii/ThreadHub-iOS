@@ -61,6 +61,7 @@ struct ThreadRow: View {
         }
         .background( NavigationLink("", destination: ThreadView(thread: thread)).opacity(0) )
         .foregroundColor(.primary)
+        .padding(.vertical, 4)
         .onAppear(perform: load)
         
         .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {
