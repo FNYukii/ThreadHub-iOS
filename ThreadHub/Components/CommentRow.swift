@@ -31,18 +31,18 @@ struct CommentRow: View {
                         Button(role: .destructive) {
                             // TODO: Delete
                         } label: {
-                            Label("delete", systemImage: "trash")
+                            Label("delete_comment", systemImage: "trash")
                         }
                     }
                     
                     Button(action: {
                         // TODO: Report
                     }) {
-                        Label("report", systemImage: "flag")
+                        Label("report_comment", systemImage: "flag")
                     }
                 } label: {
                     Image(systemName: "ellipsis")
-                        .padding(.vertical, 4)
+                        .padding(.vertical, )
                         .foregroundColor(.secondary)
                 }
             }

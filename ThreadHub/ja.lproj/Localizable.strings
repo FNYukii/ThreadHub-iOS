@@ -24,3 +24,9 @@
 
 // ThreadRow
 "comments" = "コメント";
+"delete_thread" = "スレッドを削除";
+"report_thread" = "スレッドを報告";
+
+// CommentRow
+"delete_comment" = "コメントを削除";
+"report_comment" = "コメントを報告";

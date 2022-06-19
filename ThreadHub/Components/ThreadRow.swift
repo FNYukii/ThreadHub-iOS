@@ -32,14 +32,14 @@ struct ThreadRow: View {
                         Button(role: .destructive) {
                             // TODO: Delete
                         } label: {
-                            Label("delete", systemImage: "trash")
+                            Label("delete_thread", systemImage: "trash")
                         }
                     }
                     
                     Button(action: {
                         // TODO: Report
                     }) {
-                        Label("report", systemImage: "flag")
+                        Label("report_thread", systemImage: "flag")
                     }
                 } label: {
                     Image(systemName: "ellipsis")
