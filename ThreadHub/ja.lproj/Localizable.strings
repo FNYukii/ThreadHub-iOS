@@ -31,3 +31,4 @@
 // CommentRow
 "delete_comment" = "コメントを削除";
 "report_comment" = "コメントを報告";
+"are_you_sure_you_want_to_delete_this_comment" = "このコメントを削除してもよろしいですか?";
