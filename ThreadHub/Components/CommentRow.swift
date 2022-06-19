@@ -28,16 +28,15 @@ struct CommentRow: View {
                 
                 Menu {
                     if comment.userId == FireAuth.userId() {
-                        
                         Button(role: .destructive) {
-                            
+                            // TODO: Delete
                         } label: {
                             Label("delete", systemImage: "trash")
                         }
                     }
                     
                     Button(action: {
-                        
+                        // TODO: Report
                     }) {
                         Label("report", systemImage: "flag")
                     }
