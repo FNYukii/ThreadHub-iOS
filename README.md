@@ -14,6 +14,6 @@ iOSとiPadOSで利用できる掲示板アプリです。
 
 ## スクリーンショット
 <div style="display: flex; justify-content: space-between;">
-  <img style="display: block; width: 48%;" src="https://user-images.githubusercontent.com/65577595/174473440-ff86f12c-994f-45fb-bcb9-e314f219b358.png"/>
-  <img style="display: block; width: 48%;" src="https://user-images.githubusercontent.com/65577595/174473462-ad3f183d-15d1-48f0-aa9f-dcc5dcf1912b.png"/>
+  <img style="display: block; width: 48%;" src="https://user-images.githubusercontent.com/65577595/174484298-79f7ba58-1162-43f8-9517-4429ac266d88.png"/>
+  <img style="display: block; width: 48%;" src="https://user-images.githubusercontent.com/65577595/174484301-01c77f5e-53c1-41d8-b338-fd465f9951c3.png"/>
 </div>
