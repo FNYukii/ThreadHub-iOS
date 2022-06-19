@@ -1,7 +1,12 @@
-# Thread Hub iOS
+# Thread Hub for iOS
 ## 概要
-匿名掲示板アプリ「Thread Hub」のiOS版。
+iOSとiPadOSで利用できる掲示板アプリです。  
 ユーザーがスレッドを作成し、他のユーザーがそれにコメントを追加していく仕様です。
+匿名掲示板となっており、アカウント登録不要で利用することができます。
+
+## 特徴
+**SwiftUI**を用いて開発し、データの管理には**Firebase Cloud Firestore**を利用しています。
+コメントの投稿者のIDを生成するために、**Firebase Authentication**も利用しています。
 
 ## フレームワーク・ライブラリ
 - SwiftUI
