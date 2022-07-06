@@ -14,7 +14,6 @@ struct Comment: Identifiable {
     let userId: String
     let displayName: String
     let text: String
-    let isFirst: Bool
     
     init(document: QueryDocumentSnapshot, isFirst: Bool) {
         self.id = document.documentID
@@ -23,6 +22,5 @@ struct Comment: Identifiable {
         self.userId = document.get("userId") as! String
         self.displayName = document.get("displayName") as! String
         self.text = document.get("text") as! String
-        self.isFirst = isFirst
     }
 }

@@ -29,24 +29,18 @@ struct ThreadRow: View {
                 
                 Spacer()
                 
-                Menu {
-                    if thread.userId == FireAuth.userId() {
+                if thread.userId == FireAuth.userId() {
+                    Menu {
                         Button(role: .destructive) {
                             isShowDialog.toggle()
                         } label: {
                             Label("delete_thread", systemImage: "trash")
                         }
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .foregroundColor(.secondary)
+                            .padding(.vertical, 6)
                     }
-                    
-                    Button(action: {
-                        // TODO: Report
-                    }) {
-                        Label("report_thread", systemImage: "flag")
-                    }
-                } label: {
-                    Image(systemName: "ellipsis")
-                        .foregroundColor(.secondary)
-                        .padding(.vertical, 6)
                 }
             }
             
