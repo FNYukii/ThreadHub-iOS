@@ -20,7 +20,7 @@ class FireComment {
                     print("HELLO! Fail! Error fetching snapshots: \(error!)")
                     return
                 }
-                print("HELLO! Success! Read comments. size: \(snapshot.documents.count)")
+                print("HELLO! Success! Read \(snapshot.documents.count) Comments.")
                 
                 if let document = snapshot.documents.first {
                     let comment = Comment(document: document, isFirst: true)
@@ -43,7 +43,7 @@ class FireComment {
                     if let error = error {
                         print("HELLO! Fail! Error adding new document. Error: \(error)")
                     } else {
-                        print("HELLO! Success! Added new document.")
+                        print("HELLO! Success! Added 1 Comment.")
                     }
                 }
         }
@@ -57,7 +57,7 @@ class FireComment {
             if let err = err {
                 print("HELLO! Fail! Error removing document: \(err)")
             } else {
-                print("HELLO! Success! Document successfully removed!")
+                print("HELLO! Success! Deleted 1 Comment.")
             }
         }
     }

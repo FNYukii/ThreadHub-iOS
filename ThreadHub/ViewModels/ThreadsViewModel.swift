@@ -23,7 +23,7 @@ class ThreadsViewModel: ObservableObject {
                     print("HELLO! Fail! Error fetching snapshots: \(error!)")
                     return
                 }
-                print("HELLO! Success! Read threads. size: \(snapshot.documents.count)")
+                print("HELLO! Success! Read \(snapshot.documents.count) Threads.")
                 
                 var threads: [Thread] = []
                 snapshot.documents.forEach { document in

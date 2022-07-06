@@ -12,8 +12,7 @@ class FireThread {
     static func createThread(title: String) {
         if let userId = FireAuth.userId() {
             let db = Firestore.firestore()
-            var ref: DocumentReference? = nil
-            ref = db.collection("threads")
+            db.collection("threads")
                 .addDocument(data: [
                     "createdAt": FieldValue.serverTimestamp(),
                     "userId": userId,
@@ -22,7 +21,7 @@ class FireThread {
                     if let error = error {
                         print("HELLO! Fail! Error adding new document. Error: \(error)")
                     } else {
-                        print("HELLO! Success! Added new document. DocumentID: \(ref!.documentID)")
+                        print("HELLO! Success! Added 1 Thread.")
                     }
                 }
         }
@@ -36,7 +35,7 @@ class FireThread {
             if let err = err {
                 print("HELLO! Fail! Error removing document: \(err)")
             } else {
-                print("HELLO! Success! Document successfully removed!")
+                print("HELLO! Success! Deleted 1 Thread.")
             }
         }
     }
