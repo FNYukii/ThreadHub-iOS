@@ -51,7 +51,7 @@ struct ThreadView: View {
                 Button(action: {
                     isShowSheet.toggle()
                 }) {
-                    Image(systemName: "plus")
+                    Image(systemName: "square.and.pencil")
                 }
             }
         }
