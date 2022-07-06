@@ -66,12 +66,6 @@ struct ThreadRow: View {
                     Label("delete_thread", systemImage: "trash")
                 }
             }
-            
-            Button(action: {
-                // TODO: Report
-            }) {
-                Label("report_thread", systemImage: "flag")
-            }
         }
         
         .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {

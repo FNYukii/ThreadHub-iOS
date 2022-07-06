@@ -56,12 +56,6 @@ struct CommentRow: View {
                     Label("delete_comment", systemImage: "trash")
                 }
             }
-            
-            Button(action: {
-                // TODO: Report
-            }) {
-                Label("report_comment", systemImage: "flag")
-            }
         }
         
         .confirmationDialog("", isPresented: $isShowDialog, titleVisibility: .hidden) {
