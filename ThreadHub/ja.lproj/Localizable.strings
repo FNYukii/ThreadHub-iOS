@@ -23,6 +23,7 @@
 "new_comment" = "新規コメント";
 
 // ThreadRow
+"there_are_no_comments_yet" = "まだコメントはありません。";
 "comments" = "コメント";
 "delete_thread" = "スレッドを削除";
 "report_thread" = "スレッドを報告";
