@@ -14,7 +14,7 @@
 "cancel" = "キャンセル";
 "create" = "作成";
 
-"title" = "タイトル";
+"thread_title" = "タイトル";
 "comment" = "コメント";
 "display_name" = "ニックネーム";
 
