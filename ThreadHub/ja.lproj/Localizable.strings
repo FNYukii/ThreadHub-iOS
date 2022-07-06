@@ -14,7 +14,7 @@
 "cancel" = "キャンセル";
 "create" = "作成";
 
-"title" = "タイトル";
+"thread_title" = "タイトル";
 "comment" = "コメント";
 "display_name" = "ニックネーム";
 
@@ -23,6 +23,7 @@
 "new_comment" = "新規コメント";
 
 // ThreadRow
+"there_are_no_comments_yet" = "まだコメントはありません。";
 "comments" = "コメント";
 "delete_thread" = "スレッドを削除";
 "report_thread" = "スレッドを報告";

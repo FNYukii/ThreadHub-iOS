@@ -23,7 +23,7 @@ class CommentsCountViewModel: ObservableObject {
                     print("HELLO! Fail! Error fetching snapshots: \(error!)")
                     return
                 }
-                print("HELLO! Success! Read comments. size: \(snapshot.documents.count)")
+                print("HELLO! Success! Read \(snapshot.documents.count) Comments.")
                 
                 withAnimation {
                     self.count = snapshot.documents.count

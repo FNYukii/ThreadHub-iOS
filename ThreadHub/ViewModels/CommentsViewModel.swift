@@ -23,7 +23,7 @@ class CommentsViewModel: ObservableObject {
                     print("HELLO! Fail! Error fetching snapshots: \(error!)")
                     return
                 }
-                print("HELLO! Success! Read comments. size: \(snapshot.documents.count)")
+                print("HELLO! Success! Read \(snapshot.documents.count) Comments.")
                 
                 var comments: [Comment] = []
                 var firstFlag = true

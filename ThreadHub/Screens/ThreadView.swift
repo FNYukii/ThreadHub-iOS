@@ -20,14 +20,25 @@ struct ThreadView: View {
     
     var body: some View {
         
-        List {
-            ForEach(commentsViewModel.comments) { comment in
-                CommentRow(comment: comment)
+        ZStack {
+            
+            if commentsViewModel.comments.count == 0 {
+                Text("there_are_no_comments_yet")
+                    .foregroundColor(.secondary)
             }
-            .listRowSeparator(.hidden, edges: .top)
-            .listRowSeparator(.visible, edges: .bottom)
+            
+            List {
+                ForEach(commentsViewModel.comments) { comment in
+                    CommentRow(comment: comment)
+                }
+                .listRowSeparator(.hidden, edges: .top)
+                .listRowSeparator(.visible, edges: .bottom)
+            }
+            .listStyle(PlainListStyle())
+            
         }
-        .listStyle(PlainListStyle())
+        
+        
         
         .sheet(isPresented: $isShowSheet) {
             CreateCommentView(threadId: thread.id)

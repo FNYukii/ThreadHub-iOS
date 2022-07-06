@@ -11,24 +11,12 @@ struct CreateThreadView: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    @State private var displayName = ""
     @State private var title = ""
-    @State private var text = ""
-    
-    init() {
-        let displayName = UserDefaults.standard.string(forKey: "displayName") ?? ""
-        _displayName = State(initialValue: displayName)
-    }
     
     var body: some View {
         NavigationView {
             Form {
-                TextField("title", text: $title)
-                
-                Section(header: Text("comment")) {
-                    TextField("display_name", text: $displayName)
-                    MyTextEditor(hintText: Text("comment"), text: $text)
-                }
+                TextField("thread_title", text: $title)
             }
             
             .navigationTitle("new_thread")
@@ -41,16 +29,13 @@ struct CreateThreadView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        FireThread.createThread(title: title) { threadId in
-                            UserDefaults.standard.set(displayName, forKey: "displayName")
-                            FireComment.createComment(threadId: threadId, displayName: displayName, text: text)
-                        }
+                        FireThread.createThread(title: title)
                         dismiss()
                     }) {
                         Text("create")
                             .fontWeight(.bold)
                     }
-                    .disabled(displayName.isEmpty || title.isEmpty || text.isEmpty)
+                    .disabled(title.isEmpty)
                 }
             }
         }

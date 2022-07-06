@@ -28,25 +28,19 @@ struct CommentRow: View {
                 
                 Spacer()
                 
-                Menu {
-                    if comment.userId == FireAuth.userId() && !comment.isFirst {
+                if comment.userId == FireAuth.userId() {
+                    Menu {
                         Button(role: .destructive) {
                             isShowDialog.toggle()
                         } label: {
                             Label("delete_comment", systemImage: "trash")
                         }
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .padding(.top, 2)
+                            .padding(.bottom, 6)
+                            .foregroundColor(.secondary)
                     }
-                    
-                    Button(action: {
-                        // TODO: Report
-                    }) {
-                        Label("report_comment", systemImage: "flag")
-                    }
-                } label: {
-                    Image(systemName: "ellipsis")
-                        .padding(.top, 2)
-                        .padding(.bottom, 6)
-                        .foregroundColor(.secondary)
                 }
             }
             
@@ -55,18 +49,12 @@ struct CommentRow: View {
         .padding(.vertical, 6)
         
         .contextMenu {
-            if comment.userId == FireAuth.userId() && !comment.isFirst {
+            if comment.userId == FireAuth.userId(){
                 Button(role: .destructive) {
                     isShowDialog.toggle()
                 } label: {
                     Label("delete_comment", systemImage: "trash")
                 }
-            }
-            
-            Button(action: {
-                // TODO: Report
-            }) {
-                Label("report_comment", systemImage: "flag")
             }
         }
         
